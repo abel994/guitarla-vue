@@ -1,6 +1,7 @@
 <script setup>
 import {ref, reactive, onMounted} from 'vue'
 import {db} from './data/guitarras'
+import Guitarra from './components/Guitarra.vue'
 
 const guitarras = ref ([]);
 
@@ -100,20 +101,10 @@ onMounted (()=>{
         <h2 class="text-center">Nuestra Colección</h2>
 
         <div class="row mt-5">
-            <div v-for="guitarra in guitarras" class="col-md-6 col-lg-4 my-4 row align-items-center">
-                <div class="col-4">
-                    <img class="img-fluid" src="/img/guitarra_01.jpg" alt="imagen guitarra">
-                </div>
-                <div class="col-8">
-                    <h3 class="text-black fs-4 fw-bold text-uppercase">{{ guitarra.nombre }}</h3>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sit quae labore odit magnam in autem nesciunt, amet deserunt</p>
-                    <p class="fw-black text-primary fs-3">$299</p>
-                    <button 
-                        type="button"
-                        class="btn btn-dark w-100 "
-                    >Agregar al Carrito</button>
-                </div>
-            </div><!-- FIN GUITARRA -->
+            <Guitarras
+                v-for="guitarra in guitarras"
+                :guitarra="guitarra"
+            />
         </div>
     </main>
 
