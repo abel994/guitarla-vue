@@ -9,6 +9,11 @@ onMounted (()=>{
     guitarras.value = db;
 });
 
+const incrementar = () => {
+    numero.value++
+    alert("Diste clic")
+}
+
 </script>
 
 <template>
